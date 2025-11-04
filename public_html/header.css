@@ -1,0 +1,76 @@
+header {
+    padding: 2rem 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 100;
+    background: #f8f8f8;
+    transition: padding 0.3s ease;
+}
+
+header.scrolled {
+    padding: 1rem 4rem;
+}
+
+header.scrolled .signature-container img {
+    height: 40px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a961, transparent);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signature-container img {
+    height: 50px;
+    display: block;
+    transition: height 0.3s ease;
+}
+
+nav {
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #c9a961;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #c9a961;
+}
+
+nav a:hover::after {
+    width: 100%;
+}

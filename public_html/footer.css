@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    position: relative;
+    z-index: 50; /* Higher than floating photos (z-index: 15) */
+    background: #f8f8f8;
+    color: #1a1a1a;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    margin: 0;
+    width: 100%;
+}
+
+.social-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #333;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.social-links a:hover::after {
+    width: 100%;
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: block;
+}
+
+/* Sketchfab icon uses fill instead of stroke */
+.social-links a:nth-child(2) svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #666;
+}
