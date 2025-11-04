@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Animation Not Found - Immanuel Claerhout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #f8f8f8;
+            overflow-x: hidden;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Main Content */
+        .project-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/Projects/AnimationNotFound/Screen7.png') center/cover;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .project-hero .tagline {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .achievement-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a1a;
+            padding: 1.5rem 2.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .achievement-badge .rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #e63946;
+        }
+
+        .achievement-badge .category {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .gmtk-logo {
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .achievement-badge .entries {
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #e63946;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Images */
+        .title-image,
+        .content-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        .content-image {
+            margin: 2rem 0;
+        }
+
+        /* Video Section */
+        .video-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-description {
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 3rem;
+            background: #fa5c5c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(250, 92, 92, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #e63946;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(250, 92, 92, 0.4);
+        }
+
+        .itch-logo {
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            transition: gap 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+            color: #e63946;
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Image captions */
+        .image-caption {
+            text-align: left;
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+
+
+        .section-description {
+            margin-bottom: 2rem;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 6rem 1.5rem 3rem;
+                min-height: 400px;
+            }
+
+            .project-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .project-hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .achievement-badge {
+                padding: 1.2rem 1.8rem;
+            }
+
+            .achievement-badge .rank {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .content-container {
+                padding: 2rem 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <nav class="nav-left">
+                <a href="index.html#work">Work</a>
+                <a href="aboutme.html">About/Contact</a>
+            </nav>
+            <div class="signature-container">
+                <a href="index.html">
+                    <img src="Images/Logos/Signature_Black.png" alt="Signature">
+                </a>
+            </div>
+            <nav class="nav-right">
+                <a href="https://www.linkedin.com/in/immanuel-claerhout-40403a2b8/" target="_blank"
+                    aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/immanuelclaerhout/" target="_blank" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://sketchfab.com/immanuel.claerhout999" target="_blank" aria-label="Sketchfab">
+                    <svg width="20" height="20" viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m1000 0c-552.32 0-1000 447.72-1000 1000s447.68 1000 1000 1000 1000-447.72 1000-1000-447.6-1000-1000-1000zm-86.88 1595.07-431.12-248.86v-502l431.12 232.79zm76.8-636.19-510.08-270.38 510.08-294.5 510.16 294.5zm510.48 388.29-429.52 248v-516.17l429.52-232z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <h1>Animation Not Found</h1>
+        <p class="tagline">A Puzzle-Platformer About Creating Your Own Animations</p>
+        <div class="achievement-badge">
+            <span class="rank">#39 in Creativity</span>
+            <span class="category">
+                GMTK Game Jam 2025
+            </span>
+            <span class="entries">Out of 10,000+ entries</span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="content-container">
+        <a href="index.html#work" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to Projects
+        </a>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2 class="section-title">About the Game</h2>
+            <div class="about-text">
+                <p>
+                    Animation Not Found was created for the GMTK Game Jam 2025, where the theme was "Loop." The game tells the story of a small sprite who becomes trapped inside a corrupted game world. Due to the corruption, the sprite has been completely stripped of all his animations, leaving him unable to move or interact with the world around him.
+                </p>
+                <p>
+                    Early in his journey, the sprite meets Zippy, a flying zip folder who provides him with his first animation frames: idle and walk cycles. This is where the innovative gameplay begins. Players can open the in-game animation editor, where they drag and arrange frames in the correct sequence to create smooth, functional animations. Once assembled, these animations become usable in the game world.
+                </p>
+                <p>
+                    As players progress through the game, they discover additional animation frames scattered throughout the corrupted world. Each new animation unlocks new abilities and opens up previously inaccessible areas. The game cleverly combines puzzle-solving, platforming, and creative animation design into a unique gameplay experience that challenges players to think like animators while exploring a vibrant pixel art world.
+                </p>
+            </div>
+        </section>
+
+<!-- Visual Showcase -->
+        <section class="section">
+            <img src="Images/Projects/AnimationNotFound/Frames.png" alt="Animation Frames" class="content-image">
+            <p class="image-caption">Various animation frames collected throughout the game</p>
+        </section>
+
+        <!-- Animation Editor -->
+        <section class="section">
+            <h2 class="section-title">The Animation Editor</h2>
+            <p class="section-description">The heart of the game - drag and arrange frames to create your own animations. Experiment with different sequences to discover new possibilities.</p>
+            <img src="Images/Projects/AnimationNotFound/AnimationEditor.gif" alt="Animation Editor in Action" class="content-image">
+        </section>
+
+        <!-- Gameplay Video -->
+        <section class="section">
+            <h2 class="section-title">Gameplay Video</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="Images/Projects/AnimationNotFound/DemoVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <a href="https://moonidev.itch.io/animationnotfound" target="_blank" class="cta-button">
+                Play on itch.io
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/immanuel-claerhout-40403a2b8/" target="_blank" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            <a href="https://sketchfab.com/immanuel.claerhout999" target="_blank" aria-label="Sketchfab">
+                <svg width="24" height="24" viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m1000 0c-552.32 0-1000 447.72-1000 1000s447.68 1000 1000 1000 1000-447.72 1000-1000-447.6-1000-1000-1000zm-86.88 1595.07-431.12-248.86v-502l431.12 232.79zm76.8-636.19-510.08-270.38 510.08-294.5 510.16 294.5zm510.48 388.29-429.52 248v-516.17l429.52-232z"
+                        fill="currentColor" />
+            </svg>
+            </a>
+            <a href="https://www.instagram.com/immanuelclaerhout/" target="_blank" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </div>
+        <div class="copyright">
+            Copyright © Immanuel Claerhout 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
